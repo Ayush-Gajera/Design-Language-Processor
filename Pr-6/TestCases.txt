@@ -1,0 +1,10 @@
+a: Valid 
+(a): Valid
+(a,a): Valid
+(a,(a,a),a): Valid
+(a,a),(a,a): Invalid
+a): Invalid
+(a: Invalid
+a,a: Invalid
+a,: Invalid
+(a,a),a: Invalid
