@@ -1,0 +1,21 @@
+S → A B C | D
+A → a | ε
+B → b | ε
+C → ( S ) | c
+D → A C
+
+
+output:
+FIRST Sets:
+FIRST(A) = { a e }
+FIRST(B) = { b e }
+FIRST(C) = { ( c }
+FIRST(D) = { ( a c }
+FIRST(S) = { ( a b c }
+
+FOLLOW Sets:
+FOLLOW(A) = { $ ( b c }
+FOLLOW(B) = { ( c }
+FOLLOW(C) = { $ }
+FOLLOW(D) = { $ }
+FOLLOW(S) = { $ ) }
