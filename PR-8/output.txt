@@ -1,0 +1,72 @@
+Predictive Parsing Table:  
+
+Non-Terminal   $              (              )              a              b              c
+S                             D                             D              A B C          D
+A              E              E              E              a              E 
+B              E                             E                             b              E 
+C                                                                                         c
+D                             A C                           A C                           A C
+ 
+
+the given grammar is not LL(1)
+
+
+
+String Evaluation Results:  
+
+Evaluating "abc" Not Accepted  
+Evaluating "ac" Accepted  
+Evaluating "(abc)"Not Accepted  
+Evaluating "c"**  Not Accepted  
+Evaluating "(ac)" Not Accepted  
+Evaluating "a" Not Accepted  
+Evaluating "()" Not Accepted  
+Evaluating "(ab)" Not Accepted  
+Evaluating "abcabc" Not Accepted  
+Evaluating "b"Not Accepted  
+
+
+
+
+
+
+
+
+
+
+
+
+### LL(1) Conflict Detection and Parsing Table Analysis  
+
+#### Conflict Details:  
+- Ambiguities detected for **S** with terminals **a** and **c**.  
+
+#### Predictive Parsing Table:  
+
+| Non-Terminal | `$`  | `(`  | `)`  | `a`  | `b`  | `c`  |  
+|-------------|------|------|------|------|------|------|  
+| **S**       |      | **D** |      | **A B C** |      | **D** |  
+| **A**       | ╬╡   | ╬╡   | ╬╡   | **a** | ╬╡   |      |  
+| **B**       | ╬╡   |      | ╬╡   |      | **b** | ╬╡   |  
+| **C**       |      |      |      |      |      | **c** |  
+| **D**       |      | **A C** |      | **A C** |      | **A C** |  
+
+Since conflicts exist in the parsing table, the given grammar is **not LL(1)**.  
+
+---
+
+### String Evaluation Results:  
+
+- **Evaluating "abc"** → Not Accepted  
+- **Evaluating "ac"** → Accepted  
+- **Evaluating "(abc)"** → Not Accepted  
+- **Evaluating "c"** → Not Accepted  
+- **Evaluating "(ac)"** → Not Accepted  
+- **Evaluating "a"** → Not Accepted  
+- **Evaluating "()"** → Not Accepted  
+- **Evaluating "(ab)"** → Not Accepted  
+- **Evaluating "abcabc"** → Not Accepted  
+- **Evaluating "b"** → Not Accepted  
+
+
+
